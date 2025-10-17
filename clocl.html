@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 82, 212, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #0052D4;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #4364F7;
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+        
+        .recruitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .recruitment-card {
+            background: #f8fbff;
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid #0052D4;
+            transition: all 0.3s ease;
+        }
+        
+        .recruitment-card:hover {
+            background: #edf4ff;
+            transform: translateX(5px);
+        }
+        
+        .recruitment-card h4 {
+            color: #0052D4;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .recruitment-card p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .recruitment-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .recruitment-card li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+        
+        .image-box {
+            flex: 1;
+            min-width: 300px;
+            background: #f8fbff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .image-box h4 {
+            color: #0052D4;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .image-placeholder {
+            height: 1473px;
+            background: #e6f0ff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0052D4;
+            font-weight: 500;
+            border: 2px dashed #b3d1ff;
+            background: url(images/312E5B1C4A6528EBA9E157932B7AA661.jpg);      
+            background-size: cover;}
+        
+        .steps {
+            counter-reset: step-counter;
+            margin: 25px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: #0052D4;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: 600;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            color: #0052D4;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #0052D4;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0052D4 0%, #4364F7 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 82, 212, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 82, 212, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .recruitment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>星野项目招募</h1>
+            <p class="subtitle">为了让项目更好，我们需要你的技能。无论你擅长什么，这里都有你的位置。</p>
+        </header>
+        
+        <section class="section">
+            <h2>项目简介</h2>
+            <p>星野项目致力于开发完整的游戏辅助工具，包括自动主线、自动传送点、自动神瞳等功能。我们正在招募四类伙伴，共同推进项目发展。</p>
+            
+            <div class="recruitment-grid">
+                <div class="recruitment-card">
+                    <h4>剪辑大师</h4>
+                    <p>掌握账号运营，视频剪辑，AI配音</p>
+                </div>
+                
+                <div class="recruitment-card">
+                    <h4>编程高手</h4>
+                    <p>招募以下技术人才：</p>
+                    <ul>
+                        <li>C#高手修改BadGI本体</li>
+                        <li>JS高手迭代脚本</li>
+                        <li>Python高手重构AutoBGI</li>
+                        <li>前端高手修改网页</li>
+                    </ul>
+                    <p>当然精通全部语言的AI大神也非常欢迎！</p>
+                </div>
+                
+                <div class="recruitment-card">
+                    <h4>社区运营与审核</h4>
+                    <p>要求：擅长文档编写和数据整理</p>
+                    <p>工作：审核新人，脚本统计，任务分配，接收提交的脚本，统计脚本数据，撰写和整理教程文档</p>
+                </div>
+                
+                <div class="recruitment-card">
+                    <h4>自动剧情制作</h4>
+                    <p>我啥都不会，但是就想用自动剧情脚本怎么办？</p>
+                    <p>我们开发了自动录制软件，只需在做任务时开启，即可自动生成脚本。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>自动剧情制作指南</h2>
+            <p>我们希望你能先尝试录制一个简单的任务脚本（任意主线，传说，世界任务-有原石都行-大型的如主线，森林书可以提前获取高级录制器，如果实在是没有任务每日委托包一个地区也可以），这既是学习的过程，也能让我们看到你的实力和态度。</p>
+            
+            <div class="highlight">
+                <p>我们也理解，对于一个新手，独立录制一个简单的任务脚本还是有点难度的，所以我们提供帮助，不懂的问题欢迎随时问。</p>
+            </div>
+            
+            <h3>AutoTranscribePathing自动地图追踪录制</h3>
+            <p>自动录制工具（请从群文件下载，不要使用脚仓库的）</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">0</div>
+                    <div class="step-content">
+                        <h4>准备工作</h4>
+                        <p>点击调度器，js脚本，点击打开目录，解压文件，新建调度器，添加自动地图追踪录制器</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>录制过程</h4>
+                        <p>右键设置起始点类型，运行，到任务地点打开O界面。对话完之后，重复操作1直到任务完成。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>文件处理</h4>
+                        <p>最后新建一个.json文件，把上面输出的路径都写进去，每个中间根据情况加一个对话/等待返回主界面（被强制拉入剧情，录制自动结束）/战斗/暂停</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>提交审核</h4>
+                        <p>将录制好的文件提交审核，注意你的加载器不支持下图结构，需要内部版本，在此之前你可以使用录制器里面的运行功能，或者将地图追踪脚本按照.json文件的顺序添加进调度器</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-container">
+                <div class="image-box">
+                    <h4>审核流程图</h4>
+                    <div class="image-placeholder">
+                        <!-- 审核流程图位置
+                        <br>
+                        (提交脚本 → 审核 → 通过/修改 → 入库) -->
+                    </div>
+                </div>
+            </div>
+            
+            <h3>进阶资源</h3>
+            <p>地图追踪文档（进阶知识，遇到复杂情况可以看一下或者问管理）：</p>
+            <p><a href="https://bettergi.com/feats/autos/pathing-dev.html" target="_blank">https://bettergi.com/feats/autos/pathing-dev.html</a></p>
+            <p>地图追踪视频教程群文件</p>
+            <p>.json框架见文档和精华消息</p>
+            
+            <div class="highlight">
+                <p>审核要求：总共需要制作两个任务脚本，任务做得快的大佬可以只做一个</p>
+            </div>
+            
+            <a href="#" class="cta-button">立即加入星野项目</a>
+        </section>
+        
+        <footer>
+            <p>星野项目 &copy; 2023 - 让游戏体验更美好</p>
+        </footer>
+    </div>
+</body>
+</html>
